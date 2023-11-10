@@ -9,7 +9,7 @@ hero:
   text: 使用 Vitepress 搭建组件库文档站点。
   tagline: 基于 vitepress-theme-demoblock 插件来实现 Vue 组件的支持。
   image:
-    src: ../../public/logo.svg
+    src: ./logo.svg
     alt: vitepress-theme-demoblock  
   actions:
     - theme: brand

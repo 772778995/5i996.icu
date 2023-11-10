@@ -15,7 +15,7 @@ export default defineConfig({
 
   base: process.env.BASE || '/',
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }]
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: './logo.svg' }]
   ],
 
   markdown: {
@@ -42,7 +42,7 @@ export default defineConfig({
   themeConfig: {
     outlineTitle: '本页目录',
     lastUpdatedText: '上次更新',
-    logo: '/logo.svg',
+    logo: './logo.svg',
 
     search: {
       provider: 'local',
