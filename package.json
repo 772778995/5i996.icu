@@ -1,0 +1,30 @@
+{
+  "name": "vitepress-demo",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "pnpm run register:components && vitepress dev docs",
+    "docs:build": "pnpm run register:components && vitepress build docs --base /vitepress-demo/",
+    "docs:serve": "vitepress serve docs",
+    "register:components": "vitepress-rc"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "less": "^4.1.2",
+    "prettier": "^2.7.1",
+    "vitepress": "^1.0.0-beta.3",
+    "vitepress-theme-demoblock": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    }
+  }
+}
