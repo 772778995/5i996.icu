@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "pnpm run register:components && vitepress dev docs",
-    "build": "pnpm run register:components && vitepress build docs --base ./",
+    "build": "pnpm run register:components && vitepress build docs --base /",
     "serve": "vitepress serve docs",
     "register:components": "vitepress-rc"
   },
