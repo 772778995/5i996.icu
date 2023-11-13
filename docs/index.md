@@ -14,10 +14,7 @@ hero:
   actions:
     - theme: brand
       text: 我的博客
-      link: /blog/Css/Scss%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84
-    - theme: alt
-      text: Learn More
-      link: /guide/
+      link: /blog/CSS/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84CSS
 
 features:
   - icon: ⚡️
