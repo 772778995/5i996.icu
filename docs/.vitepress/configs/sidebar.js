@@ -1,6 +1,5 @@
 import path from 'path'
 import dirTree from 'directory-tree'
-import fs from 'fs-extra'
 
 function toSidebarOption(tree = []) {
   if (!Array.isArray(tree)) return []
