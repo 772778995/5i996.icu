@@ -3,7 +3,7 @@ import { demoblockPlugin, demoblockVitePlugin } from 'vitepress-theme-demoblock'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import path from 'path'
 import nav from './configs/nav'
-import sidebar from './configs/sidebar'
+import getSidebarItem from './configs/sidebar'
 
 export default defineConfig({
   // lang: 'en-US',
@@ -15,7 +15,7 @@ export default defineConfig({
 
   base: process.env.BASE || '/',
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: './logo.svg' }]
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: './logo.png' }]
   ],
 
   markdown: {
@@ -42,7 +42,7 @@ export default defineConfig({
   themeConfig: {
     outlineTitle: '本页目录',
     lastUpdatedText: '上次更新',
-    logo: './logo.svg',
+    logo: './logo.png',
 
     search: {
       provider: 'local',
@@ -58,7 +58,7 @@ export default defineConfig({
     nav,
 
     // sidebar
-    sidebar,
+    sidebar: getSidebarItem,
 
     editLink: {
       pattern: 'https://github.com/xinlei3166/vitepress-demo/edit/master/docs/:path',

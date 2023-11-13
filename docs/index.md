@@ -1,20 +1,20 @@
 ---
 layout: home
 
-title: Vitepress Demo
-titleTemplate: 使用 Vitepress 搭建组件库文档站点。
+title: 请叫我大聪明
+titleTemplate: 请叫我大聪明的主页。
 
 hero:
-  name: Vitepress
-  text: 使用 Vitepress 搭建组件库文档站点。
-  tagline: 基于 vitepress-theme-demoblock 插件来实现 Vue 组件的支持。
+  name: 请叫我大聪明
+  text: 请叫我大聪明的主页。
+  tagline: 这是一段描述。
   image:
-    src: ./logo.svg
-    alt: vitepress-theme-demoblock  
+    src: ./logo.png
+    alt: 请叫我大聪明  
   actions:
     - theme: brand
-      text: Get Started
-      link: /guide/
+      text: 我的博客
+      link: /blog/Css/Scss%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84
     - theme: alt
       text: Learn More
       link: /guide/

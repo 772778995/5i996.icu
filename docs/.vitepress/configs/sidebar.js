@@ -1,77 +1,42 @@
-export default {
-  '/api/': getApiSidebar(),
-  '/components/': getComponentsSidebar(),
-  '/guide/': getGuideSidebar()
+import path from 'path'
+import dirTree from 'directory-tree'
+import fs from 'fs-extra'
+
+function toSidebarOption(tree = []) {
+  if (!Array.isArray(tree)) return []
+
+  return tree.map((v) => {
+    if (v.children !== undefined) {
+      return {
+        text: v.name,
+        collapsible: true,
+        collapsed: true,
+        items: toSidebarOption(v.children),
+      }
+    } else {
+      return {
+        text: v.name.replace('.md', ''),
+        link: v.path.split('docs')[1].replace('.md', ''),
+      }
+    }
+  })
 }
 
-function getApiSidebar() {
+function autoGetSidebarOptionBySrcDir(srcPath, title) {
+  const srcDir = dirTree(srcPath, {
+    extensions: /\.md$/,
+    normalizePath: true,
+  })
+
   return [
     {
-      text: '功能',
-      collapsible: true,
-      items: [
-        {
-          text: '已实现',
-          link: '/api/'
-        },
-      ]
-    }
+      text: '我的博客',
+      items: toSidebarOption(srcDir.children),
+    },
   ]
 }
 
-function getComponentsSidebar() {
-  return [
-    {
-      text: '组件',
-      items: [
-        {
-          text: 'Button 按钮',
-          link: '/components/button'
-        },
-        {
-          text: 'Tabs 标签页',
-          link: '/components/tabs'
-        },
-        {
-          text: 'Modal 对话框',
-          link: '/components/modal'
-        },
-        {
-          text: 'Tag 标签',
-          link: '/components/tag'
-        },
-        {
-          text: 'Vue 引用组件',
-          link: '/components/vue'
-        },
-        {
-          text: 'Vue Script',
-          link: '/components/vue-script'
-        }
-      ]
-    }
-  ]
-}
+const docsPathList = path.join(__dirname, '../../../docs/blog/')
 
-function getGuideSidebar() {
-  return [
-    {
-      text: '指南',
-      items: [
-        {
-          text: '文档1',
-          link: '/guide/'
-        },
-        {
-          text: '文档2',
-          link: '/guide/button'
-        },
-        {
-          text: '文档3',
-          link: '/guide/modal'
-        }
-      ]
-    }
-  ]
-}
-
+const sidebar = autoGetSidebarOptionBySrcDir(docsPathList)
+export default sidebar
