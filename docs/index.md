@@ -15,6 +15,9 @@ hero:
     - theme: brand
       text: 我的博客
       link: /blog/CSS/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84CSS
+    - theme: alt
+      text: 更新日志
+      link: /CHANGE_LOG
 
 features:
   - icon: ⚡️
